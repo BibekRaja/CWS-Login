@@ -1,0 +1,22 @@
+.cwsl-wrap .cwsl-intro {
+	max-width: 52rem;
+}
+
+.cwsl-form .cwsl-url-prefix {
+	vertical-align: middle;
+}
+
+.cwsl-logo-preview {
+	margin: 0 0 12px;
+	padding: 12px;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+.cwsl-logo-preview img {
+	display: block;
+	max-height: 120px;
+	width: auto;
+}
