@@ -6,7 +6,7 @@ Tags: login, security, wp-login, branding, custom login
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Yes. Developers can use the `cwsl_conflicting_plugin_basenames` filter to pass a
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.0 =
 * Security and hardening: sanitized admin request variables, capability checks on redirects and notices, `wp_safe_redirect` where appropriate, image-only logo validation with `edit_post` capability, stricter redirect slug validation, safer admin JS (DOM APIs instead of HTML string concatenation).
 * Privacy: suggested policy text via WordPress Privacy Policy guide.
 * Added readme.txt and directory index.php shields; removed uninstall `OPTIMIZE TABLE` for host compatibility.
@@ -85,5 +85,5 @@ Yes. Developers can use the `cwsl_conflicting_plugin_basenames` filter to pass a
 
 == Upgrade Notice ==
 
-= 1.0.1 =
+= 1.0.0 =
 Maintenance and security hardening release. Recommended for all users.

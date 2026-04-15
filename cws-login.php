@@ -3,7 +3,7 @@
  * Plugin Name:       CWS Login
  * Plugin URI:        https://wordpress.org/plugins/cws-login
  * Description:       Replaces the default WordPress login URL with a custom slug, blocks direct access to wp-login.php for visitors, redirects anonymous users away from wp-admin to a configurable destination, and lets you brand the login screen with your company logo.
- * Version:           1.0.1
+ * Version:           1.0.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Bibek Raja
@@ -27,26 +27,26 @@
  * @package CWS_Login
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
-define( 'CWSL_VERSION', '1.0.1' );
-define( 'CWSL_PLUGIN_FILE', __FILE__ );
-define( 'CWSL_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'CWSL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'CWSL_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+define('CWSL_VERSION', '1.0.0');
+define('CWSL_PLUGIN_FILE', __FILE__);
+define('CWSL_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('CWSL_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('CWSL_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
 require_once CWSL_PLUGIN_DIR . 'includes/class-cwsl-plugin.php';
 require_once CWSL_PLUGIN_DIR . 'includes/class-cwsl-admin.php';
 
-register_activation_hook( __FILE__, array( 'CWSL_Plugin', 'on_activation' ) );
+register_activation_hook(__FILE__, array('CWSL_Plugin', 'on_activation'));
 
 add_action(
 	'plugins_loaded',
 	function () {
 		$core = CWSL_Plugin::instance();
-		if ( $core->cwsl_is_ready() ) {
+		if ($core->cwsl_is_ready()) {
 			CWSL_Admin::instance();
 		}
 	},

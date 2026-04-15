@@ -1,50 +1,50 @@
-( function ( $ ) {
+(function ($) {
 	'use strict';
 
-	$( function () {
+	$(function () {
 		var frame;
-		var $input = $( '#cwsl_logo_attachment_id' );
-		var $preview = $( '#cwsl-logo-preview' );
-		var $remove = $( '#cwsl-remove-logo' );
+		var $input = $('#cwsl_logo_attachment_id');
+		var $preview = $('#cwsl-logo-preview');
+		var $remove = $('#cwsl-remove-logo');
 
-		$( '#cwsl-select-logo' ).on( 'click', function ( e ) {
+		$('#cwsl-select-logo').on('click', function (e) {
 			e.preventDefault();
-			if ( frame ) {
+			if (frame) {
 				frame.open();
 				return;
 			}
-			frame = wp.media( {
+			frame = wp.media({
 				title: cwslAdmin.chooseLogo,
 				button: { text: cwslAdmin.useLogo },
 				multiple: false,
 				library: { type: 'image' },
-			} );
-			frame.on( 'select', function () {
-				var attachment = frame.state().get( 'selection' ).first().toJSON();
+			});
+			frame.on('select', function () {
+				var attachment = frame.state().get('selection').first().toJSON();
 				var src =
 					attachment.sizes && attachment.sizes.medium
 						? attachment.sizes.medium.url
 						: attachment.url;
-				$input.val( attachment.id );
+				$input.val(attachment.id);
 				$preview
 					.empty()
 					.append(
-						$( '<img />', {
+						$('<img />', {
 							src: src,
 							alt: '',
-						} )
+						})
 					)
 					.show();
 				$remove.show();
-			} );
+			});
 			frame.open();
-		} );
+		});
 
-		$remove.on( 'click', function ( e ) {
+		$remove.on('click', function (e) {
 			e.preventDefault();
-			$input.val( '0' );
+			$input.val('0');
 			$preview.empty().hide();
 			$remove.hide();
-		} );
-	} );
-}( jQuery ) );
+		});
+	});
+}(jQuery));
